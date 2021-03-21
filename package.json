@@ -1,0 +1,34 @@
+{
+  "name": "make-sdk-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exampleW3schools.js",
+  "scripts": {
+    "w3schools": "npm-run-all w3schools:*",
+    "w3schools:createTypes": "npx ts-node ./wsdl-to-ts/index.ts -- https://www.w3schools.com/xml/tempconvert.asmx?WSDL",
+    "w3schools:start": "ts-node -T ./exampleW3schools.ts",
+    "dneonline": "npm-run-all dneonline:*",
+    "dneonline:createTypes": "npx ts-node ./wsdl-to-ts/index.ts -- http://www.dneonline.com/calculator.asmx?WSDL",
+    "dneonline:start": "ts-node -T ./exampleDneonline.ts",
+    "debug": "ts-node-dev --inspect --respawn -- ./index.ts"
+  },
+  "keywords": [],
+  "author": "DMSC",
+  "license": "BSD",
+  "dependencies": {
+    "easysoap": "^2.2.0",
+    "npm-run-all": "^4.1.5",
+    "soap": "^0.36.0",
+    "minimist": "^1.2.0",
+    "mkdirp": ">=0.5.1 <1.0.0"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.1.6",
+    "@types/bluebird": "^3.5.23",
+    "@types/minimist": "^1.2.0",
+    "@types/mkdirp": ">=0.5.1 <1.0.0",
+    "@types/node": ">=6.0.0 <12.0.0",
+    "tslint": "^5.11.0",
+    "typescript": "^4.2.3"
+  }
+}
