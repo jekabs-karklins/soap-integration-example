@@ -5,7 +5,7 @@ This project showcases how could SOAP services can be integrated into UserOffice
 ## Installation
 
 ```bash
-git clone https://github.com/UserOfficeProject/soap-integration-example
+git clone https://github.com/jekabs-karklins/soap-integration-example.git
 cd soap-integration-example
 npm install
 ```
