@@ -3,7 +3,8 @@ import { ITempConvertSoap12Soap } from "./wsdl/TempConvert/TempConvertSoap12";
 
 
 async function exampleW3schools() {
-  const client = await getClient<ITempConvertSoap12Soap>(
+  // initialize client
+  const client = await getClient<ITempConvertSoap12Soap>( // ITempConvertSoap12Soap is generated interface
     {
       host: "www.w3schools.com",
       path: "/xml/tempconvert.asmx",
@@ -11,13 +12,14 @@ async function exampleW3schools() {
       rejectUnauthorized: false,
     },
     {
-      secure: true,
+      secure: true, // https or http
     },
-    "https://www.w3schools.com/xml/"
+    "https://www.w3schools.com/xml/" // namespace for action
   );
 
+  // client with available SOAP methods
   client.CelsiusToFahrenheit({ Celsius: "0" }, (err, result, raw, headers) => {
-    console.log(result);
+    console.log(result); // NOTE: for some reason result.CelsiusToFahrenheitResult is undefined (bug with wsdl-to-ts, we'll fix it latter) 
   });
 }
 
